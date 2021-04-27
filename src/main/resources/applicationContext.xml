@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <context:annotation-config />
+    <bean id="operatorBean" class="com.example.ex51.PlusOp" scope="prototype">
+    </bean>
+    <bean id = "operand" class = "com.example.ex51.Operand" scope = "prototype">
+        <property name="value" value="10"/>
+    </bean>
+
+    <bean id="operatorBean2" class="com.example.ex43.MinusOp" scope="prototype">
+    </bean>
+    <bean id = "op1" class = "com.example.ex43.Operand" scope = "prototype">
+        <qualifier value="value10" />
+        <property name="value" value="10"/>
+    </bean>
+    <bean id = "op2" class = "com.example.ex43.Operand" scope = "prototype">
+        <qualifier value="value20" />
+        <property name="value" value="20"/>
+    </bean>
+
+    <bean id="operatorBean3" class="com.example.ex44.MinusOp" scope="prototype">
+    </bean>
+    <bean id = "op3" class = "com.example.ex44.Operand" scope = "prototype">
+        <property name="value" value="10"/>
+    </bean>
+    <bean id = "op4" class = "com.example.ex44.Operand" scope = "prototype">
+        <property name="value" value="20"/>
+    </bean>
+
+    <bean id ="messageBean" class="com.example.ex57.MessageBeanKo"  scope="prototype">
+
+    </bean>
+
+    <bean id ="messageBean1" class="com.example.ex57a.MessageBeanKo" init-method="initialize" destroy-method="close"  >
+
+    </bean>
+    <bean id ="messageBean2" class="com.example.ex58.MessageBeanKo" init-method="initialize" destroy-method="close"  scope="prototype" >
+
+    </bean>
+</beans>
+
